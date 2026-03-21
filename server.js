@@ -42,14 +42,18 @@ const Product = mongoose.model('Product', productSchema);
 // ROUTES
 // ==========================================
 
-// 1. GET: Check if product exists (Search by exact name)
+// 1. GET: Check if product exists (Search by name OR HS Code)
 app.get('/api/products', async (req, res) => {
   try {
     const { name } = req.query;
     if (!name) return res.json(null);
 
+    // Search by product name (case-insensitive) OR exact HS Code
     const product = await Product.findOne({ 
-        productName: { $regex: new RegExp(`^${name}$`, 'i') } 
+      $or: [
+        { productName: { $regex: new RegExp(`^${name}$`, 'i') } },
+        { hsCode: name }
+      ]
     });
 
     if (product) {
