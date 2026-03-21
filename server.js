@@ -11,7 +11,9 @@ const app = express();
 // Allow requests from your local React app AND your future live React app
 app.use(cors({
   origin: [
-    'https://website-avskexim-admin-page.vercel.app' // Add your live frontend URL later
+    'https://website-avskexim-admin-page.vercel.app',
+    'https://www.avskexim.com',
+    'https://avskexim.com/HSCode#hs-code-search' // Add your live frontend URL later
   ],
   methods: ['GET', 'POST', 'PUT']
 }));
