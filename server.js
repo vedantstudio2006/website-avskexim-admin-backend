@@ -15,7 +15,8 @@ app.use(cors({
     'https://www.avskexim.com',
     'https://avskexim.com/HSCode#hs-code-search' // Add your live frontend URL later
   ],
-  methods: ['GET', 'POST', 'PUT']
+  methods: ['GET', 'POST', 'PUT','PATCH'],
+  credentials: true
 }));
 
 app.use(express.json());
