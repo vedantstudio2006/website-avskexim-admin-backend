@@ -16,7 +16,7 @@ app.use(cors({
     'https://www.avskexim.com', 
     'https://www.avskexim.com/',
     'https://website-avskexim-admin-page.vercel.app',
-    'http://localhost:5173/HSCode#hs-code-search' // Add your live frontend URL later
+    'http://localhost:5173' // Add your live frontend URL later
   ],
   methods: ['GET', 'POST', 'PUT','PATCH'],
   credentials: true
